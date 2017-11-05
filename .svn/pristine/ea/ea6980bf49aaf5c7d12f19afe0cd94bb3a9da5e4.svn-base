@@ -1,0 +1,70 @@
+package gui;
+
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+import localization.Localization;
+
+@SuppressWarnings("serial")
+public class AboutDialog extends JDialog {
+
+	public AboutDialog() {
+
+		ImageIcon prva = new ImageIcon("src//gui//images//acimovic.jpg");
+		ImageIcon druga = new ImageIcon("src//gui//images//milenovic.jpg");
+		ImageIcon treca = new ImageIcon("src//gui//images//nenadic.jpg");
+		ImageIcon cetvrta = new ImageIcon("src//gui//images//stankovic.jpg");
+
+		setTitle(Localization.getInstance().getBundle().getString("aboutaction"));
+		setModalityType(ModalityType.APPLICATION_MODAL);
+		setSize(new Dimension(400, 400));
+		setResizable(false);
+		setLocationRelativeTo(AppWindow.getInstance());
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+
+		JPanel glavni = new JPanel(new BorderLayout());
+
+		JPanel naslovniPanel = new JPanel();
+
+		JLabel naslov = new JLabel(Localization.getInstance().getBundle().getString("bumerang"), SwingConstants.CENTER);
+
+		naslov.setFont(new Font(naslov.getFont().getFontName(), Font.BOLD, 18));
+		JPanel pozadina = new JPanel(new GridLayout(2, 4));
+		JLabel prvi = new JLabel(Localization.getInstance().getBundle().getString("acimovic"), prva,
+				SwingConstants.CENTER);
+		prvi.setHorizontalTextPosition(JLabel.CENTER);
+		prvi.setVerticalTextPosition(JLabel.BOTTOM);
+		JLabel drugi = new JLabel(Localization.getInstance().getBundle().getString("milenovic"), druga,
+				SwingConstants.CENTER);
+		drugi.setHorizontalTextPosition(JLabel.CENTER);
+		drugi.setVerticalTextPosition(JLabel.BOTTOM);
+		JLabel treci = new JLabel(Localization.getInstance().getBundle().getString("nenadic"), treca,
+				SwingConstants.CENTER);
+		treci.setHorizontalTextPosition(JLabel.CENTER);
+		treci.setVerticalTextPosition(JLabel.BOTTOM);
+		JLabel cetvrti = new JLabel(Localization.getInstance().getBundle().getString("stankovic"), cetvrta,
+				SwingConstants.CENTER);
+		cetvrti.setHorizontalTextPosition(JLabel.CENTER);
+		cetvrti.setVerticalTextPosition(JLabel.BOTTOM);
+
+		pozadina.add(prvi);
+		pozadina.add(drugi);
+		pozadina.add(treci);
+		pozadina.add(cetvrti);
+
+		naslovniPanel.add(naslov);
+
+		add(glavni);
+		glavni.add(naslovniPanel, BorderLayout.NORTH);
+		glavni.add(pozadina, BorderLayout.CENTER);
+		setVisible(true);
+	}
+
+}

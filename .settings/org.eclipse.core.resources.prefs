@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/actions/AA/ExitAction.java=UTF-8
+encoding//src/collection/view/DocumentView.java=UTF-8
+encoding//src/collection/view/PageView.java=UTF-8
+encoding//src/collection/view/ProjectView.java=UTF-8
+encoding//src/collection/view/SlotView.java=UTF-8
+encoding//src/gui/AppWindow.java=UTF-8
+encoding//src/model/workspace/DocumentModel.java=UTF-8
+encoding//src/model/workspace/PageModel.java=UTF-8
+encoding//src/model/workspace/ProjectModel.java=UTF-8
+encoding//src/model/workspace/Workspace.java=UTF-8
+encoding//src/tree/TreeM.java=UTF-8
